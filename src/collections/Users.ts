@@ -1,4 +1,15 @@
 import { CollectionConfig } from 'payload/types'
+import { createEnumOptions } from '../utils/collection'
+
+export enum UserRole {
+  Owner = 'owner',
+  Staff= 'staff'
+}
+
+export const userRoleLabel: Record<UserRole, string> = {
+  [UserRole.Owner]: 'Owner',
+  [UserRole.Staff]: 'Staff',
+}
 
 const Users: CollectionConfig = {
   slug: 'users',
@@ -17,16 +28,8 @@ const Users: CollectionConfig = {
       name: 'role',
       label: 'Role',
       type: 'select',
-      options: [
-        {
-          label: 'Owner',
-          value: 'owner',
-        },
-        {
-          label: 'Staff',
-          value: 'staff'
-        }
-      ]
+      required: true,
+      options: createEnumOptions(UserRole, userRoleLabel)
     },
     {
       name: 'permissions',
