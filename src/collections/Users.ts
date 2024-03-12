@@ -38,17 +38,17 @@ const Users: CollectionConfig = {
           type: 'collapsible',
           fields: [
             {
-              name: 'readPages',
+              name: 'isReadPages',
               label: 'Read',
               type: 'checkbox'
             },
             {
-              name: 'createAndUpdatePages',
+              name: 'isCreatePages',
               label: 'Create and Update',
               type: 'checkbox'
             },
             {
-              name: 'deletePages',
+              name: 'isDeletePages',
               label: 'Delete',
               type: 'checkbox'
             }
@@ -59,17 +59,17 @@ const Users: CollectionConfig = {
           type: 'collapsible',
           fields: [
             {
-              name: 'readEvents',
+              name: 'isReadEvents',
               label: 'Read',
               type: 'checkbox'
             },
             {
-              name: 'createAndUpdateEvents',
+              name: 'isCreateEvents',
               label: 'Create and Update',
               type: 'checkbox'
             },
             {
-              name: 'deleteEvents',
+              name: 'isDeleteEvents',
               label: 'Delete',
               type: 'checkbox'
             }
