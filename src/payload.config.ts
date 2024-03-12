@@ -9,6 +9,7 @@ import { buildConfig } from 'payload/config'
 import Users from './collections/Users'
 import Events from './collections/Events'
 import Pages from './collections/Pages'
+import accessControl from './plugins/permissions/accessControl'
 
 export default buildConfig({
   admin: {
@@ -23,7 +24,7 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  plugins: [payloadCloud()],
+  plugins: [payloadCloud(), accessControl],
   // database-adapter-config-start
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
